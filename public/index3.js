@@ -8,9 +8,9 @@ kaboom({
 
 // load assets
 loadSprite("flappy-background", "sprites/flappy-background.png");
-loadSprite("butterfly", "sprites/butterfly.png");
+loadSprite("butterfly", "sprites/doc1.png");
 loadSprite("tower1", "sprites/tower1.png");
-loadSprite("rect", "sprites/rect.png");
+loadSprite("rect", "sprites/corona3.png");
 layers(["game", "ui"], "game");
 
 let highscore = 0;
@@ -30,15 +30,20 @@ scene("game", () => {
 
   const scoreTest = add([text(score, { size: 50 })]);
 
-  const player = add([sprite("butterfly"), pos(80, 30), area(), body()]);
+  const player = add([
+    sprite("butterfly", { height: 80, width: 80 }),
+    pos(80, 30),
+    area(),
+    body(),
+  ]);
 
   function producePipes() {
-    const offset = rand(-70, 70);
+    const offset = rand(-20, 20);
     add([
-      sprite("rect"),
+      sprite("rect", { height: 70, width: 70 }),
       pos(width(), height() / 2 + offset + PIPE_GAP / 2),
       layer("ui"),
-      scale(1, 8),
+      scale(2.5),
       "pipe",
       area(),
       {
@@ -47,11 +52,11 @@ scene("game", () => {
     ]);
 
     add([
-      sprite("rect", { flipY: true }),
-      pos(width(), height() / 2 + offset - PIPE_GAP / 2),
+      sprite("rect", { flipY: true }, { height: 70, width: 70 }),
+      pos(width(), height() / 2 + offset - PIPE_GAP / 3),
       layer("ui"),
       origin("botleft"),
-      scale(1, 8),
+      scale(0.7),
       "pipe",
       area(),
     ]);
