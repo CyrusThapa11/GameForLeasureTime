@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boom Boom with kaboomJS</title>
+
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .heading {
+        /* height: 100px; */
+        font-size: 2rem;
+        position: absolute;
+        top: 20px;
+        font-weight: 700;
+        color: aqua;
+      }
+      body {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="heading">CoRoNa wAvE 3</h2>
+    <div id="particles-js"></div>
+    <!-- stats - count particles -->
+    <div class="count-particles">
+      <span class="js-count-particles">--</span> particles
+    </div>
+    <script src="https://unpkg.com/kaboom/dist/kaboom.js"></script>
+    <script src="/index3.js"></script>
+    <form action="/home" method="get" class="form">
+      <button disabled id="btn" class="btn">Home</button>
+    </form>
+    <script src="/particles.js-master/particles.js"></script>
+    <script src="/particles.js-master/demo/js/app.js"></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+  </body>
+</html>
