@@ -8,10 +8,12 @@ kaboom({
 
 // load assets
 loadSprite("flappy-background", "sprites/flappy-background.png");
-loadSprite("butterfly", "sprites/doc1.png");
-loadSprite("tower1", "sprites/tower1.png");
-loadSprite("rect", "sprites/corona3.png");
+loadSprite("butterfly", "sprites/god.png");
+loadSprite("tower1", "sprites/satan.png");
+loadSprite("rect", "sprites/satan.png");
 layers(["game", "ui"], "game");
+loadSprite("satan", "./sprites/satan.png");
+loadSprite("meat", "./sprites/meat.png");
 
 let highscore = 0;
 
@@ -131,8 +133,10 @@ scene("win", () => {
       color: rgb(0, 0, 255),
     }),
   ]);
-  const btn = document.getElementById("btn");
-  btn.disabled = false;
+  const btn = document.getElementById("btn1");
+  const btn2 = document.getElementById("btn2");
+  btn.style.display = "inline";
+  btn2.style.display = "inline";
 
   onKeyPress("1", () => {
     go("docorona");

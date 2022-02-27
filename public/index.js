@@ -15,12 +15,15 @@ kaboom({
 loadSprite("corona3", "./sprites/corona3.png");
 loadSprite("corona2", "./sprites/corona2.png");
 loadSprite("doc1", "./sprites/doc1.png");
+loadSprite("god", "./sprites/god.png");
+loadSprite("satan", "./sprites/satan.png");
 
 loadSprite("hospital", "./sprites/hospital.png");
 loadSprite("jumpy", "./sprites/jumpy.png");
 loadSprite("grass", "./sprites/grass.png");
 loadSprite("portal", "./sprites/portal.png");
 loadSprite("medicine", "./sprites/medicine.png");
+loadSprite("meat", "./sprites/meat.png");
 
 loadSound("hit", "./sounds/hit.mp3");
 loadSound("shoot", "./sounds/shoot.mp3");
@@ -90,13 +93,7 @@ const levelConf = {
   // define each object as a list of components
   "=": () => [sprite("grass"), area(), solid(), layer("game"), origin("bot")],
   x: () => [sprite("grass"), area(), solid(), layer("game"), origin("bot")],
-  "#": () => [
-    sprite("medicine"),
-    area(),
-    scale(0.3),
-    origin("bot"),
-    "medicine",
-  ],
+  "#": () => [sprite("meat"), area(), scale(0.1), origin("bot"), "medicine"],
   "%": () => [
     sprite("prize"),
     area(),
@@ -106,16 +103,16 @@ const levelConf = {
     "prize",
   ],
   ">": () => [
-    sprite("corona3"),
+    sprite("satan"),
     area(),
     solid(),
-    scale(0.25),
+    scale(0.3),
     patrolX(),
     origin("center"),
     "corona",
   ],
   "<": () => [
-    sprite("corona2"),
+    sprite("satan"),
     area(),
     solid(),
     scale(0.2),
@@ -144,10 +141,10 @@ scene("game", () => {
   const level = addLevel(LEVELS[0], levelConf);
 
   const doctor = add([
-    sprite("doc1"),
+    sprite("god"),
     pos(50, 0),
     area(),
-    scale(0.3),
+    scale(0.6),
     layer("bg"),
     // makes it fall to gravity and jumpable
     body(),
@@ -245,7 +242,6 @@ scene("lose", () => {
 });
 
 scene("win", () => {
-  // console.log("you won !");
   add([
     pos(24, 24),
     text("You won level 1 congo !!", {
@@ -256,8 +252,10 @@ scene("win", () => {
     }),
   ]);
 
-  const btn = document.getElementById("btn");
-  btn.disabled = false;
+  const btn = document.getElementById("btn1");
+  const btn2 = document.getElementById("btn2");
+  btn.style.display = "inline";
+  btn2.style.display = "inline";
 
   onKeyPress(() => go("game"));
 });

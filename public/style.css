@@ -18,9 +18,15 @@ body {
   color: wheat;
   font-size: 20px;
 }
-#particles-js {
-  background: black;
-  height: 100vh;
+body {
+  /* background: black; */
+  /* height: 100vh; */
+
+  background-image: url("/sprites/background.jpg");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .canvas {
@@ -39,13 +45,32 @@ canvas {
   position: absolute;
   right: 400px;
   top: 150px;
+  display: none;
+}
+.form2 {
+  position: absolute;
+  right: 200px;
+  top: 150px;
+  display: none;
+}
+.form2 > a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
 }
 
 .btn {
   cursor: pointer;
   border: 5px solid white;
-  /* background-color: snow; */
   padding: 10px;
   color: white;
   background: transparent;
 }
+
+/* .background {
+  background-image: url("/public/sprites/background.jpg");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */

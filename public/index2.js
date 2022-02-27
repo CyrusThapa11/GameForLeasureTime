@@ -9,16 +9,19 @@ kaboom({
 });
 
 // load assets
-loadSprite("corona1", "./sprites/corona1.png");
-loadSprite("doc1", "./sprites/doc1.png");
+loadSprite("corona1", "./sprites/satan.png");
+loadSprite("doc1", "./sprites/god.png");
 loadSprite("earth", "./sprites/earth2.gif");
-loadSprite("corona2", "./sprites/corona2.png");
-loadSprite("corona3", "./sprites/corona3.png");
+loadSprite("corona2", "./sprites/satan.png");
+loadSprite("corona3", "./sprites/satan.png");
 
 loadSound("hit", "./sounds/hit.mp3");
 loadSound("shoot", "./sounds/shoot.mp3");
 loadSound("explode", "./sounds/explode.mp3");
 loadSound("OtherworldlyFoe", "./sounds/OtherworldlyFoe.mp3");
+loadSprite("god", "./sprites/god.png");
+loadSprite("satan", "./sprites/satan.png");
+loadSprite("meat", "./sprites/meat.png");
 
 let highscore = 0;
 
@@ -44,7 +47,7 @@ scene("docorona", () => {
     sprite("doc1"),
     layer("bg"),
     pos(60, height() / 2),
-    scale(0.3),
+    scale(0.6),
     area(),
     rotate(20),
     origin("center"),
@@ -86,7 +89,7 @@ scene("docorona", () => {
       sprite("corona1"),
       pos(width() - 50, position),
       health(HEALTH_CORONA1),
-      scale(0.14),
+      scale(0.34),
       area(),
       "corona",
       {
@@ -111,7 +114,7 @@ scene("docorona", () => {
       sprite("corona2"),
       health(HEALTH_CORONA2),
       pos(width() - 50, position),
-      scale(0.14),
+      scale(0.44),
       area(),
       "corona",
       {
@@ -136,7 +139,7 @@ scene("docorona", () => {
       sprite("corona3"),
       health(HEALTH_CORONA3),
       pos(width() - 50, position),
-      scale(0.14),
+      scale(0.54),
       area(),
       "corona",
       {
@@ -258,9 +261,10 @@ scene("win", () => {
       color: rgb(0, 0, 255),
     }),
   ]);
-  const btn = document.getElementById("btn");
-  btn.disabled = false;
-
+  const btn = document.getElementById("btn1");
+  const btn2 = document.getElementById("btn2");
+  btn.style.display = "inline";
+  btn2.style.display = "inline";
   onKeyPress("1", () => {
     go("docorona");
     debug.log("pressed 1");

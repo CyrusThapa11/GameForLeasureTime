@@ -25,7 +25,7 @@ app.get("/level3", (req, res) => {
   const client = require("twilio")(accountSid, authToken);
   client.messages
     .create({
-      body: "Congo you won level 2 on boom-boom-withKaBoOm !!",
+      body: "Congratulations you won Second level of the game !! \n Here is your abstract art : https://api.echo3d.co/webar?key=twilight-glitter-7670&entry=1a5e6c68-3ae7-4c18-bf20-16f357580dbd ",
       from: "+19035825586",
       to: "+917535955144",
     })
@@ -40,7 +40,7 @@ app.get("/sendsms", (req, res) => {
   const client = require("twilio")(accountSid, authToken);
   client.messages
     .create({
-      body: "Congo you won level 1 on boom-boom-withKaBoOm !!",
+      body: "Congratulations you won Second level of the game !! \n Here is your abstract art : https://api.echo3d.co/webar?key=twilight-glitter-7670&entry=0f347d71-2717-419d-b697-df6d737f253a ",
       from: "+19035825586",
       to: "+917535955144",
     })
@@ -54,7 +54,7 @@ app.get("/home", (req, res) => {
   const client = require("twilio")(accountSid, authToken);
   client.messages
     .create({
-      body: "Congo you completed the game on boom-boom-withKaBoOm !!",
+      body: "Congratulations you won First level of the game !! \n Here is your abstract art : https://api.echo3d.co/webar?key=twilight-glitter-7670&entry=33f2bb46-9ac7-4a05-87b4-ade57893d742 ",
       from: "+19035825586",
       to: "+917535955144",
     })
